@@ -14,12 +14,12 @@ const app = new App({
 
 // Listens to incoming messages that contain "hello"
 app.message('hello', async ({ message, say }: {message: any, say: any}) => {
-    console.log('message', message)
+    console.log('messagews', message)
   await say(`Hey there <@${message.user}>!`);
 });
 
 app.command('/sql-dev', async ({ command, ack, respond }) => {
-  console.log('hello command', command);
+  console.log('hello command', command)
   await ack();
   await respond(`${command.text}`);
 });
