@@ -3,15 +3,33 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
+    "start": "node build/app.js",
+    "postinstall": "prisma generate",
     "serve": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "4.8.1",
     "@slack/bolt": "^3.12.2",
+    "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "openai": "^3.2.1",
+    "pg": "^8.10.0",
+    "polka": "^0.5.2"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.6.6",
+    "@types/polka": "^0.5.4",
+    "prisma": "4.8.1"
   }
 }
